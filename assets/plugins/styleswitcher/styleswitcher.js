@@ -1,8 +1,9 @@
 /**	STYLE SWITCHER
 *************************************************** **/
+var logo = '<?php echo "$logo" ?>';
 jQuery(document).ready(function() {
 	"use strict";
-	var logo = '<?php json_encode($logo); ?>';
+
 
     jQuery("#hideSwitcher, #showSwitcher").click(function () {
 
@@ -38,12 +39,13 @@ function setActiveStyleSheet(title) {
 	}
 
 	// DARK SKIN
+
 	var color_skin = readCookie('color_skin');
 	if(color_skin == 'dark') {
 		jQuery("#css_dark_skin").remove();
 		jQuery("head").append('<link id="css_dark_skin" href="assets/css/layout-dark.css" rel="stylesheet" type="text/css" title="dark" />');
 		jQuery("#is_dark").trigger('click');
-		jQuery("a.logo img").attr('src', '<?php json_encode($logo); ?>';);
+		////jQuery("a.logo img").attr('src', 'logo');
 	}
 }
 
@@ -122,7 +124,7 @@ window.onload = function(e) {
 		jQuery("#css_dark_skin").remove();
 		jQuery("head").append('<link id="css_dark_skin" href="assets/css/layout-dark.css" rel="stylesheet" type="text/css" title="dark" />');
 		jQuery("#is_dark").trigger('click');
-		jQuery("a.logo img").attr('src', '<?php json_encode($logo); ?>';);
+		jQuery("a.logo img").attr('src', 'logo');
 	}
 
 	// BOXED or WIDE
@@ -196,11 +198,11 @@ jQuery("input.dark_switch").bind("click", function() {
 		jQuery("#css_dark_skin").remove();
 		jQuery("head").append('<link id="css_dark_skin" href="assets/css/layout-dark.css" rel="stylesheet" type="text/css" title="dark" />');
 		createCookie("color_skin", 'dark', 365);
-		jQuery("a.logo img").attr('src', '<?php json_encode($logo); ?>';);
+		jQuery("a.logo img").attr('src', 'logo');
 	} else {
 		jQuery("#css_dark_skin").remove();
 		createCookie("color_skin", '', -1);
-		jQuery("a.logo img").attr('src', '<?php json_encode($logo); ?>';);
+		jQuery("a.logo img").attr('src', 'logo');
 	}
 });
 

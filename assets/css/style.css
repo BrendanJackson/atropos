@@ -104,6 +104,25 @@ pre {
 /**.**/
 
 
+/**
+*cart*
+*/
+li.cart, a.show_minicart{
+	margin:0;
+	padding:0!important;
+}
+.cartMenu{
+	height:1em;
+	width:5.5em;
+}
+a.dropdown-toggle.show_minicart:hover, .cartMenu:hover{
+	background-color: #2E363F;
+	border-radius:2em;
+}
+a.show_minicart::before, a.dropdown-toggle.show_minicart::after, b.caret{
+	display:none;
+}
+
 /**	NOTIFICATION MESSAGES
 ***************************************************************** **/
 	.nNote									{ margin:10px 0 30px 0; border-radius:3px; -webkit-border-radius:3px; -moz-border-radius:3px; }

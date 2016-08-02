@@ -14,11 +14,8 @@ $member = in_array('member', $module_list);
 <!--[if gt IE 9]><!-->	<html> <!--<![endif]-->
 <head>
     <meta charset="utf-8" />
-    <title>Atropos - Responsive Multipurpose</title>
-    <meta name="keywords" content="HTML5,CSS3,Template" />
-    <meta name="description" content="" />
-    <meta name="Author" content="Dorin Grigoras [www.stepofweb.com]" />
-
+    <title><?=!empty($page_name) ? $page_name : \config::site_name ?></title>
+    
     <!-- mobile settings -->
     <meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0" />
 
@@ -243,34 +240,11 @@ $member = in_array('member', $module_list);
 
                     <!-- QUICK SHOP CART -->
                     <?php
-                    if(!empty($catalog)){
-                    echo
-                    "<li class='quick-cart'>
-                        <span class='badge pull-right'></span>
-
-                        <div class='quick-cart-content'>
-
-                            <p><i class='fa fa-warning'></i> You have ? products on your cart</p>
-
-
-                   git         <!-- QUICK CART BUTTONS -->
-                            <div class='row cart-footer'>
-                                <div class='col-md-6 nopadding-right'>
-                                    <a href='shop-cart.html' class='btn btn-primary btn-xs fullwidth'>VIEW CART</a>
-                                </div>
-                                <div class='col-md-6 nopadding-left'>
-                                    <a href='shop-cc-pay.html' class='btn btn-info btn-xs fullwidth'>CHECKOUT</a>
-                                </div>
-                            </div>
-                            <!-- /QUICK CART BUTTONS -->
-
-                        </div>
-
-                    </li>";
+                    if(!empty($catalog)) {
+                        $minicart_data = \sa\application\modRequest::request('site.minicart', array('disable_minicart' => $disable_minicart, 'html' => ''), '');
+                        echo "<li class='cart ' >"  . $minicart_data['html'] . "</li>";
                     }?>
                     <!-- /QUICK SHOP CART -->
-
-
                 </ul>
             </nav>
         </div>
