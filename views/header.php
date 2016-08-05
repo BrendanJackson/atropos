@@ -109,7 +109,7 @@ $member = in_array('member', $module_list);
         if(!empty($member)) {
             echo
             "<div class='pull-right nav signin-dd'>
-            <a id='quick_sign_in' href='page-signin.html' data-toggle='dropdown'><i class='fa fa-users'></i><span class='hidden-xs'> Sign In</span></a>
+            <a id='quick_sign_in' href='member/login' data-toggle='dropdown'><i class='fa fa-users'></i><span class='hidden-xs'>Sign In</span></a>
             <div class='dropdown-menu' role='menu' aria-labelledby='quick_sign_in'>
 
                 <h4>Sign In</h4>
@@ -133,7 +133,7 @@ $member = in_array('member', $module_list);
 
                     <div class='checkbox'><!-- remember -->
                         <label>
-                            <input type='checkbox'> Remember me &bull; <a href='page-signin.html'>Forgot password?</a>
+                            <input type='checkbox'> Remember me &bull; <a href='member/login'>Forgot password?</a>
                         </label>
                     </div>
 
@@ -141,12 +141,12 @@ $member = in_array('member', $module_list);
 
                 <hr />
 
-                <a href='#' class='btn-facebook fullwidth radius3'><i class='fa fa-facebook'></i> Connect With Facebook</a>
-                <a href='#' class='btn-twitter fullwidth radius3'><i class='fa fa-twitter'></i> Connect With Twitter</a>
+                <!--<a href='#' class='btn-facebook fullwidth radius3'><i class='fa fa-facebook'></i> Connect With Facebook</a>-->
+                <!--<a href='#' class='btn-twitter fullwidth radius3'><i class='fa fa-twitter'></i> Connect With Twitter</a>-->
                 <!--<a href='#' class='btn-google-plus fullwidth radius3'><i class='fa fa-google-plus'></i> Connect With Google</a>-->
 
                 <p class='bottom-create-account'>
-                    <a href='page-signup.html'>Manual create account</a>
+                    <a href='member/login'>Manual create account</a>
                 </p>
             </div>
         </div>";
@@ -157,7 +157,7 @@ $member = in_array('member', $module_list);
         <?php
         if(!empty($catalog)){
         echo
-        "<a class='pull-right' id='btn-mobile-quick-cart' href='shop-cart.html'><i class='fa fa-shopping-cart'></i></a>";
+        "<a class='pull-right' id='btn-mobile-quick-cart' href='/catalog/cart'><i class='fa fa-shopping-cart'></i></a>";
         }?>
         <!-- CART MOBILE BUTTON -->
 
